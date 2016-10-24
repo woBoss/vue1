@@ -1,0 +1,128 @@
+*
+	margin 0
+	padding 0
+	line-height 1
+	font-family SimHei
+a
+	text-decoration none
+	color inherit
+ul
+ol
+	list-style none
+em
+i
+	font-style normal
+icon20($scaleRate)
+	display inline-block
+	width unit(20*$scaleRate, "px")
+	height @width
+	background-image url(../image/icon20.png)
+	background-size 100% auto
+page($scaleRate)
+	header
+		padding 0 unit(15*$scaleRate, "px")
+		height unit(42*$scaleRate, "px")
+		background-color rgb(33, 41, 43)
+		span
+			font-size unit(16*$scaleRate, "px")
+			color white
+			line-height @height
+	.icon20
+		icon20($scaleRate)
+		&.search
+			float right
+			margin-top unit(11*$scaleRate, "px")
+			margin-right @margin-top*3
+			background-position 0 0
+		&.add
+			float right
+			margin-top unit(11*$scaleRate, "px")
+			background-position 0 unit(-@width - .5*$scaleRate, "px")
+	.main
+		height unit(500*$scaleRate, "px")
+		background-color rgb(235, 235, 235)
+	$w=unit(20.5*$scaleRate, "px")
+	.row
+		float left
+		width 100%
+		height unit(42*$scaleRate, "px")
+		background-color white
+		font-size unit(14*$scaleRate, "px")
+		line-height @height
+		&:before
+			icon20($scaleRate)
+			margin 0 unit(15*$scaleRate, "px") 0 unit(22*$scaleRate, "px")
+			content ""
+			vertical-align middle
+		&.sweep
+			&:before
+				background-position 0 -2*$w
+		&.swag
+			&:before
+				background-position 0 -3*$w
+		&.nearby
+			&:before
+				background-position 0 -4*$w
+		&.bottle
+			&:before
+				background-position 0 -5*$w
+		&.shop
+			&:before
+				background-position 0 -6*$w
+		&.game
+			&:before
+				background-position 0 -7*$w
+		&:nth-of-type(2n-1)
+			position relative
+			margin-top unit(18*$scaleRate, "px")
+			&:after
+				position absolute
+				bottom -.5px
+				left unit(10*$scaleRate, "px")
+				content ""
+				width unit(300*$scaleRate, "px")
+				border-bottom 1px solid rgb(225, 225, 225)
+	footer
+		position fixed
+		bottom 0
+		width 100%
+		height unit(48*$scaleRate, "px")
+		background-color white
+		border-top 1px solid rgb(225, 225, 225)
+		$w=unit(25.5*$scaleRate, "px")
+		div
+			float left
+			width 25%
+			height 100%
+			text-align center
+			font-size unit(12*$scaleRate, "px")
+			color rgb(130, 130, 130)
+			&:before
+				margin unit(4*$scaleRate, "px") auto unit(2*$scaleRate, "px")
+				display block
+				width unit(25*$scaleRate, "px")
+				height @width
+				content ""
+				background-image url(../image/icon25.png)
+				background-size 100% auto
+			&.wechat
+				&:before
+					background-position 50% 0
+			&.contact
+				&:before
+					background-position 50% -1*$w
+			&.explore
+				&:before
+					background-position 50% -2*$w
+			&.me
+				&:before
+					background-position 50% -3*$w
+/*iPhone5*/
+@media (min-width:320px) and (max-width:374px)
+	page(1)
+/*iPhone6*/
+@media (min-width:375px) and (max-width:413px)
+	page(375/320)
+/*iPhone6 plus*/
+@media (min-width:414px)
+	page(414/320)
